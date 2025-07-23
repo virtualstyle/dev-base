@@ -1,0 +1,213 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+  tab-size: 4;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  min-block-size: 100vb;
+  min-inline-size: 100vi;
+  writing-mode: horizontal-tb;
+	height: 100%;
+	max-width: 100%;
+}
+
+body {
+  min-block-size: 100vb;
+  min-inline-size: 100vi;
+	height: 100%;
+  writing-mode: horizontal-tb;
+  background: #fff;
+  color: #000;
+	scrollbar-gutter: stable both-edges;
+	scrollbar-width: thin;
+	overflow: auto;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+body, h1, h2, h3, p, ul, ol {
+  margin: 0;
+}
+
+/* 2. FLUID TYPOGRAPHY & RHYTHM */
+:root {
+  --min-vw: 320;
+  --max-vw: 1200;
+  --min-font: 1rem;
+  --max-font: 1.25rem;
+}
+html {
+  font-size: clamp(
+    var(--min-font),
+    calc((100vw - var(--min-vw)) / (var(--max-vw) - var(--min-vw)) * (var(--max-font) - var(--min-font)) + var(--min-font)),
+    var(--max-font)
+  );
+}
+body {
+  line-height: 1.6;
+  margin: clamp(1rem, 5vw, 2rem);
+}
+
+/* 3. GLOBAL IMAGES & MEDIA */
+img, picture, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.aspect-16-9 {
+  aspect-ratio: 16/9;
+}
+
+/* 6. ACCESSIBILITY & FOCUS STYLES */
+/* Use :focus-visible to handle keyboard focus only */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+:focus-visible {
+  outline: 3px solid Highlight;
+  outline-offset: 2px;
+  /* CSS variables can standardize across components */
+  --focus-outline: 3px solid Highlight;
+}
+/* Respect high contrast user settings */
+@media (forced-colors: active) {
+  *:focus {
+    outline: 1px solid WindowText;
+  }
+}
+@media (prefers-contrast: more) {
+  body {
+    outline: 1px solid;
+  }
+}
+
+/* 7. CONTRAST & INTERACTIVE TARGET SIZING */
+button, a, .clickable {
+  /*min-height: 2.5rem;*/
+  padding: 0.5rem 1rem;
+}
+
+/* 8. ONE-LINER MODERN UPGRADES */
+/* Margin block to automatically adapt bidi layouts */
+h2 {
+  margin-block: 1rem;
+}
+/* Underline offset for better readability */
+a {
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 3px;
+}
+/* Color-scheme for light/dark automatic base styling */
+:root {
+  color-scheme: light dark;
+}
+/* Accent-color for controls, e.g., inputs */
+input[type="checkbox"] {
+  accent-color: var(--accent-color);
+}
+/* Scroll margin top for in-page links */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+
+p,
+blockquote,
+pre,
+code {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+input, textarea, select, button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  border-radius: 0;
+}
+
+textarea:not([rows]) {
+  min-block-size: 10em;
+}
+
+fieldset {
+  border: none;
+}
+
+/*
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ */
+
+ul,
+ol {
+  padding-inline-start: 2em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+&:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+}
+
+img, picture, video, canvas, svg, iframe {
+  display: block;
+  /* max-inline-size: 100%; */
+}
+
+*:focus-visible {
+  outline: 2px solid currentcolor;
+}
+
+*:focus:not(:is(input, textarea)) {
+  outline: none;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
