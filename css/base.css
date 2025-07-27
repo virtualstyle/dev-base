@@ -90,9 +90,9 @@ body {
       .bi {
         display: block !important;
 
-      &.bi-check-square-fill {
-        visibility: hidden;
-      }
+				&.bi-check-square-fill {
+					display: none !important;
+				}
       }
 
       &.active,
@@ -109,7 +109,7 @@ body {
 				}
 
 				.bi-check-square-fill {
-					visibility: visible;
+					display: block !important;
 					color: var(--bs-success);
 					font-weight: bold;
 				}
@@ -124,11 +124,11 @@ body {
 				}
 
 				.bi-square {
-					visibility: hidden;
+					display: none !important;
 				}
 
         .bi-check-square-fill {
-          visibility: visible;
+          display: block !important;
           color: var(--bs-success);
           font-weight: bold;
         }
