@@ -1,65 +1,483 @@
-[data-bs-theme='light'] {
-	--bs-btn-color: var(--bs-white);
-	--bs-btn-bg: var(--bs-gray-900);
-	--bs-btn-border-color: var(--bs-gray-400);
-	--bs-btn-hover-color: var(--bs-gray-900);
-	--bs-btn-hover-bg: var(--bs-white);
-	--bs-btn-hover-border-color: var(--bs-gray-700);
-	--bs-btn-focus-shadow-rgb: var(--bs-gray-400);
-	--bs-btn-active-bg: var(--bs-btn-hover-bg);
-	--bs-btn-active-border-color: var(--bs-btn-hover-border-color);
-
-	.nav-logo.logo-light {
-		display: block;
-	}
-
-	.nav-logo.logo-dark {
-		display: none;
-	}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	overscroll-behavior: contain;
+	margin: 0;
+	padding: 0;
+	min-inline-size: 0;
+	background-repeat: no-repeat;
+	box-sizing: inherit;
 }
 
-/* Color mode adjustments  */
-[data-bs-theme='dark'] {
-	--bs-btn-color: var(--bs-gray-900);
-	--bs-btn-bg: var(--bs-white);
-	--bs-btn-border-color: var(--bs-gray-200);
-	--bs-btn-hover-color: var(--bs-gray-900);
-	--bs-btn-hover-bg: var(--bs-white);
-	--bs-btn-hover-border-color: var(--bs-gray-600);
-	--bs-btn-focus-shadow-rgb: var(--bs-gray-400);
-	--bs-btn-active-color: var(--bs-btn-hover-color);
-	--bs-btn-active-bg: var(--bs-btn-hover-bg);
-	--bs-btn-active-border-color: var(--bs-btn-hover-border-color);
-
-	.nav-logo.logo-light {
-		display: none;
-	}
-
-	.nav-logo.logo-dark {
-		display: block;
-	}
+:after,
+:before {
+	text-decoration: inherit;
+	vertical-align: inherit;
 }
 
-.skip-link-container {
-	position: absolute;
-	display: inline-block;
-	inline-size: 100%;
-	block-size: 0;
+html {
+	font-family: system-ui, sans-serif;
+	font-size: 100%;
+	line-height: 1.25;
+	tab-size: 2;
+	text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	min-block-size: 100vb;
+	min-inline-size: 100vi;
+	writing-mode: horizontal-tb;
+	height: 100%;
+	max-width: 100%;
 }
 
-.skip-link {
-	background: var(--primary-color);
-	color: #fff;
+body {
+	min-block-size: 100vb;
+	min-inline-size: 100vi;
+	height: 100%;
+	writing-mode: horizontal-tb;
+	background: #fff;
+	color: #000;
+	scrollbar-gutter: stable both-edges;
+	scrollbar-width: thin;
+	overflow: auto;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+	text-wrap: balance;
+	overflow-wrap: break-word;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+	margin: 0;
+}
+
+/* 2. FLUID TYPOGRAPHY & RHYTHM */
+:root {
+	--min-vw: 320;
+	--max-vw: 1200;
+	--min-font: 1rem;
+	--max-font: 1.25rem;
+}
+
+html {
+	font-size: clamp(
+		var(--min-font),
+		calc(
+			(100vw - var(--min-vw)) / (var(--max-vw) - var(--min-vw)) *
+				(var(--max-font) - var(--min-font)) + var(--min-font)
+		),
+		var(--max-font)
+	);
+}
+
+body {
+	line-height: 1.25;
+}
+
+/* 3. GLOBAL IMAGES & MEDIA */
+img,
+picture,
+video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.aspect-16-9 {
+	aspect-ratio: 16/9;
+}
+
+/*  RESS RESET STYLES (https://github.com/filipelinhares/ress/tree/master) */
+
+hr {
+	color: inherit;
+	height: 0;
+	overflow: visible;
+}
+
+details,
+main {
+	display: block;
+}
+
+summary {
+	display: list-item;
+}
+
+small {
+	font-size: 80%;
+}
+
+[hidden] {
+	display: none;
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+a {
+	background-color: transparent;
+}
+
+a:active,
+a:hover {
+	outline-width: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+}
+
+pre {
+	font-size: 1em;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+table {
+	border-color: inherit;
+	text-indent: 0;
+}
+
+iframe {
+	border-style: none;
+}
+
+input {
+	border-radius: 0;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type='search'] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+[type='search']::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font: inherit;
+}
+
+optgroup {
 	font-weight: 700;
-	margin: auto;
-	padding: 4px;
-	position: absolute;
-	transform: translateX(-200%);
-	z-index: var(--z-max);
+}
 
-	&:focus {
-		transform: translateX(0%);
-		box-shadow: 2px 2px 26px var(--primary-color);
-		border: 2px solid var(--primary-color);
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+[role='button'],
+[type='button'],
+[type='reset'],
+[type='submit'],
+button {
+	cursor: pointer;
+}
+
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner,
+button::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner,
+button:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+[type='reset'],
+[type='submit'],
+button,
+html [type='button'] {
+	-webkit-appearance: button;
+}
+
+/*
+button,
+input,
+select,
+textarea {
+	background-color: transparent;
+	border-style: none;
+}
+*/
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline-width: 0;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+select::-ms-value {
+	color: currentColor;
+}
+
+legend {
+	border: 0;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	white-space: normal;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	color: inherit;
+	font: inherit;
+}
+
+[disabled] {
+	cursor: default;
+}
+
+img {
+	border-style: none;
+}
+
+progress {
+	vertical-align: baseline;
+}
+
+[aria-busy='true'] {
+	cursor: progress;
+}
+
+[aria-controls] {
+	cursor: pointer;
+}
+
+[aria-disabled='true'] {
+	cursor: default;
+}
+
+/* END RESS RESET STYLES (https://github.com/filipelinhares/ress/tree/master) */
+
+/* 6. ACCESSIBILITY & FOCUS STYLES */
+/* Use :focus-visible to handle keyboard focus only */
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
+:focus-visible {
+	outline: 3px solid Highlight;
+	outline-offset: 2px;
+	/* CSS variables can standardize across components */
+	--focus-outline: 3px solid Highlight;
+}
+
+/* Respect high contrast user settings */
+@media (forced-colors: active) {
+	*:focus {
+		outline: 1px solid WindowText;
+	}
+}
+
+@media (prefers-contrast: more) {
+	body {
+		outline: 1px solid;
+	}
+}
+
+/* 7. CONTRAST & INTERACTIVE TARGET SIZING */
+button,
+.clickable {
+	/*min-height: 2.5rem;*/
+	padding: 0.5rem 1rem;
+}
+
+/* 8. ONE-LINER MODERN UPGRADES */
+/* Margin block to automatically adapt bidi layouts */
+h2 {
+	margin-block: 1rem;
+}
+
+/* Underline offset for better readability */
+a {
+	text-decoration-skip-ink: auto;
+	text-underline-offset: 3px;
+}
+
+/* Color-scheme for light/dark automatic base styling */
+:root {
+	color-scheme: light dark;
+}
+
+/* Accent-color for controls, e.g., inputs */
+input[type='checkbox'] {
+	accent-color: var(--accent-color);
+}
+
+/* Scroll margin top for in-page links */
+[id] {
+	scroll-margin-top: 5rem;
+}
+
+p,
+blockquote,
+pre,
+code {
+	text-wrap: pretty;
+	overflow-wrap: break-word;
+}
+
+input,
+textarea,
+select,
+button {
+	font: inherit;
+	color: inherit;
+	/*border: none;*/
+	background: none;
+	border-radius: 0;
+}
+
+textarea:not([rows]) {
+	min-block-size: 10em;
+}
+
+fieldset {
+	border: none;
+}
+
+/*
+	ul, ol {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	*/
+
+ul,
+ol {
+	padding-inline-start: 2em;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&:not([class]) {
+		text-decoration-skip-ink: auto;
+	}
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+	display: block;
+	/* max-inline-size: 100%; */
+}
+
+*:focus-visible {
+	outline: 2px solid currentcolor;
+}
+
+*:focus:not(:is(input, textarea)) {
+	outline: none;
+}
+
+#root,
+#__next {
+	isolation: isolate;
+}
+
+:target {
+	scroll-margin-block: 5ex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none;
+		transition: none;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
 	}
 }
