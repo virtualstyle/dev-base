@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./static/img/vs-logo-animated.svg" style="max-width:700px;margin:auto;">
+  <img src="./static/vs-logo-animated.svg" style="max-width:700px;margin:auto;">
 </p>
 ------
 <p align="center">
