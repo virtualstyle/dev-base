@@ -1,0 +1,31 @@
+{
+  "name": "@virtualstyle/development-base",
+  "version": "0.1.0",
+  "description": "Central storage for miscellaneous files and utilities used commonly across various virtualStyle projects.",
+  "license": "UNLICENSED",
+  "keywords": [
+    "virtualstyle",
+    "virtualstyle.us",
+    "development",
+    "utilities",
+    "miscellaneous",
+    "common-files",
+    "web",
+    "frontend",
+    "javascript",
+    "css",
+    "html",
+    "jsdoc",
+    "eslint",
+    "stylelint",
+    "prettier"
+  ],
+  "author": "Rob Wood <rob@virtualstyle.us> (https://rob.wood.pub/)",
+  "private": true,
+  "type": "module",
+  "browserslist": [
+    "defaults",
+    "cover 99% in US",
+    "last 2 versions"
+  ]
+}
