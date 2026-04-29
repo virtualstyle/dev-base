@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="bluesky" x="0" y="-0" width="500" height="500" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0" y="-0" width="500" height="500"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <path d="M108.375,59.499c57.344,43.032 119,130.313 141.625,177.125c22.656,-46.812 84.313,-134.062 141.625,-177.125c41.344,-31.031 108.375,-55.062 108.375,21.375c0,15.282 -8.75,128.282 -13.875,146.625c-17.875,63.75 -82.906,80.032 -140.75,70.188c101.125,17.219 126.875,74.219 71.281,131.25c-105.5,108.25 -151.625,-27.188 -163.437,-61.875c-2.188,-6.375 -3.219,-9.375 -3.219,-6.813c0,-2.531 -1.031,0.438 -3.188,6.813c-11.843,34.687 -57.968,170.125 -163.468,61.875c-55.563,-57.031 -29.844,-114.063 71.25,-131.25c-57.813,9.844 -122.875,-6.406 -140.719,-70.188c-5.125,-18.343 -13.875,-131.375 -13.875,-146.625c-0,-76.437 67.031,-52.406 108.375,-21.375" style="fill:currentColor;fill-rule:nonzero;"/>
+    </g>
+</svg>

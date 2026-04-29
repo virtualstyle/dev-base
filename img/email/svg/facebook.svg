@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="facebook" x="-0" y="-0" width="500" height="500" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="-0" y="-0" width="500" height="500"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <path d="M500,251.531c0,-138.92 -111.924,-251.531 -249.969,-251.531c-138.107,0.031 -250.031,112.611 -250.031,251.562c-0,125.516 91.426,229.565 210.911,248.438l0,-175.759l-63.429,-0l-0,-72.679l63.492,0l-0,-55.462c-0,-63.023 37.339,-97.831 94.425,-97.831c27.372,-0 55.962,4.906 55.962,4.906l0,61.867l-31.527,-0c-31.028,-0 -40.714,19.404 -40.714,39.307l0,47.182l69.304,0l-11.061,72.678l-58.274,0l-0,175.76c119.485,-18.873 210.911,-122.922 210.911,-248.438" style="fill:currentColor;fill-rule:nonzero;"/>
+    </g>
+</svg>
